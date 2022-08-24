@@ -60,10 +60,10 @@ static float charges;
 
 void flights(){
 
-string flightsN[]={"goa","mumbai","delhi"};
+string flightsN[]={"Goa","Mumbai","Delhi"};
 
 for(int i=0;i<3;i++){
-    cout <<(i+1)<<".flight to" << flightsN[i]<< endl;
+    cout <<(i+1)<<".Flight to  " << flightsN[i]<< endl;
 }
 
 cout << "welcome to the airlines"<< endl;
@@ -72,24 +72,24 @@ cin>>choice;
 
 switch(choice){
 case 1:
-    cout << "welcome to goa airways" << endl;
+    cout << "welcome to Goa airways" << endl;
     cout << "your comfort is our priority" << endl;
     cout << "following are the flights" << endl;
 
     cout << "1.Goa-123"<< endl;
     cout <<"1-08-2022 12:00 Am 1 hr Rs.3000/-" << endl;
 
-    cout << "1.Goa-321"<< endl;
+    cout << "2.Goa-321"<< endl;
     cout << "2-08-2022 1:00 Am 1 hr Rs.3300/-" << endl;
 
-    cout << "select the flight " << endl;
+    cout << "select the Flight " << endl;
     cin>>choice1;
 
     if(choice1==1){
             charges=3000;
-        cout << "you have booked the flight Goa-123"<< endl;
+        cout << "you have booked the Flight Goa-123"<< endl;
     cout << "you can go back to the mainmenu and get your ticket" << endl;
-    }else if(choice1==3){
+    }else if(choice1==2){
     charges=3300;
     cout << "you have booked the flight Goa-321"<< endl;
     cout << "you can go back to the mainmenu and get your ticket" << endl;
@@ -202,26 +202,27 @@ public :
 
     void bill(){
 
-        string destination = " " ;
+        string destination = "" ;
     ofstream outf("flight.txt");
     {
         outf<<"_______Aadhya Airlines______" << endl;
         outf<<"___________Ticket___________" << endl;
+        outf<<"____________________________" << endl;
 
         outf<<"customer Id: " <<details::cId<< endl;
-        outf<<"name" <<details::name<< endl;
-        outf<<"gender"<<details::gender<<endl;
-        outf<<"description"<<endl<<endl;
+        outf<<"Name: " <<details::name<< endl;
+        outf<<"Gender: "<<details::gender<<endl;
+        outf<<"Description: "<<endl<<endl;
 
         if(registration::choice==1){
-            destination="goa";
+            destination="Goa";
         }else if(registration::choice==2){
-        destination = "mumbai";
+        destination = "Mumbai";
         }else if(registration::choice==3){
-        destination = "delhi";
+        destination = "Delhi";
         }
-        outf<<"destination" <<destination << endl;
-        outf<<"flight cost" <<registration::charges<< endl;
+        outf<<"Destination: " <<destination << endl;
+        outf<<"Flight cost: " <<registration::charges<< endl;
     }
     outf.close();
 
@@ -309,7 +310,7 @@ case 3:
 
     break;
 case 4:
-    cout << "_______thank you________" << endl;
+    cout << "_______Thank you________" << endl;
     break;
 default :
     cout << "invalid input" << endl;
@@ -318,6 +319,8 @@ default :
 
 }
 
+    
+    
 
 
 }
